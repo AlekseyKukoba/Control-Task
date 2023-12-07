@@ -9,11 +9,32 @@ int Getnum(string message)
     int num = int.Parse(Console.Readline()!); 
     return num;
  }
+string[] symbol(int[] arr)
+{
+    int n = 0;
+    for (int i = 0; i < Array.Length; i++)
+    {
+        if (Array[i].Length <= 3)
+            n++;
+    }
+    string[] result = new string[n];
+    int j = 0;
+    for (int i = 0; i < Array.Length; i++)
+    {
+        if (Array[i].Length <= 3)
+        {
+            result[j] = stringArray[i];
+            j++;
+        }
+    }
+    return result;
+}
 void PrintArray(int[] arr)
 {
-    for (int i = 0; i < arr.Length; i++)
+    for (int i = 0; i < Array.Length; i++)
     {
         Console.Write($"{arr[i]} ");
     }
 }
-
+array(stringArray);
+PrintArray(symbol(stringArray));
