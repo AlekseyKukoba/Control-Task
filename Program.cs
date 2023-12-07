@@ -3,3 +3,17 @@
 //Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
 //При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
+int Getnum(string message)
+{
+     Console.WriteLine(message);
+    int num = int.Parse(Console.Readline()!); 
+    return num;
+ }
+void PrintArray(int[] arr)
+{
+    for (int i = 0; i < arr.Length; i++)
+    {
+        Console.Write($"{arr[i]} ");
+    }
+}
+
