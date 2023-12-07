@@ -1,27 +1,32 @@
-//Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк,
-//длина которых меньше, либо равна 3 символам. 
-//Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма. 
+﻿//Задача: Написать программу, которая из имеющегося массива строк формирует новый массив из строк, 
+//длина которых меньше, либо равна 3 символам. Первоначальный массив можно ввести с клавиатуры, 
+//либо задать на старте выполнения алгоритма. 
 //При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
 
-int Getnum(string message)
+Console.Write("Введите длину массива: ");
+int N = Convert.ToInt32(Console.ReadLine());
+string[] stringArray = new string[N];
+void array(string[] stringArray)
 {
-     Console.WriteLine(message);
-    int num = int.Parse(Console.Readline()!); 
-    return num;
- }
-string[] symbol(int[] arr)
-{
-    int n = 0;
-    for (int i = 0; i < Array.Length; i++)
+    for (int i = 0; i < stringArray.Length; i++)
     {
-        if (Array[i].Length <= 3)
-            n++;
+        Console.WriteLine($"Введите {i + 1} элемент массива");
+        stringArray[i] = Console.ReadLine();
+  }
+}
+string[] symbol(string[] stringArray)
+{
+    int m = 0;
+    for (int i = 0; i < stringArray.Length; i++)
+    {
+        if (stringArray[i].Length <= 3)
+            m++;
     }
-    string[] result = new string[n];
+    string[] result = new string[m];
     int j = 0;
-    for (int i = 0; i < Array.Length; i++)
+    for (int i = 0; i < stringArray.Length; i++)
     {
-        if (Array[i].Length <= 3)
+        if (stringArray[i].Length <= 3)
         {
             result[j] = stringArray[i];
             j++;
@@ -29,12 +34,14 @@ string[] symbol(int[] arr)
     }
     return result;
 }
-void PrintArray(int[] arr)
+void printArray(string[] stringArray)
 {
-    for (int i = 0; i < Array.Length; i++)
+    Console.Write("[");
+    for (int i = 0; i < stringArray.Length; i++)
     {
-        Console.Write($"{arr[i]} ");
+        Console.Write($"‘{ stringArray[i]}’, ");
     }
+    Console.Write("]");
 }
 array(stringArray);
-PrintArray(symbol(stringArray));
+printArray(symbol(stringArray));
